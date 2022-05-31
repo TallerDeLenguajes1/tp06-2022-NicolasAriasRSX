@@ -74,6 +74,7 @@ static class Program
             empleado2.MostrarInfo();
             empleado3.MostrarInfo();
             System.Console.WriteLine("Monto salarial total: {0:N2}", TotalSalarios());
+            SeJubila();
         }
         double TotalSalarios()
         {
@@ -89,6 +90,18 @@ static class Program
             Empleado empleado1 = new Empleado("Juan", "Diaz", new DateTime(1989,2,16), 'S', 'M', new DateTime(2023,3,2), 24000, cargos.Especialista);
             Empleado empleado2 = new Empleado("Pepe", "Romario", new DateTime(1974,2,9), 'C', 'M', new DateTime(2011,7,12), 14000, cargos.Administrativo);
             Empleado empleado3 = new Empleado("Maria", "Burgos", new DateTime(1981,11,23), 'C', 'F', new DateTime(2007,4,23), 34000,cargos.Ingeniero);
+            if(empleado1.Edad() >= empleado2.Edad() && empleado1.Edad() >= empleado3.Edad())
+            {
+                empleado1.MostrarInfo();
+            }
+              if(empleado2.Edad() >= empleado1.Edad() && empleado2.Edad() >= empleado3.Edad())
+            {
+                empleado2.MostrarInfo();
+            }
+              if(empleado3.Edad() >= empleado1.Edad() && empleado3.Edad() >= empleado2.Edad())
+            {
+                empleado3.MostrarInfo();
+            }
         }
         return 0;
     }
